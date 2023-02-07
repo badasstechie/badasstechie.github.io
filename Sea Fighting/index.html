@@ -105,7 +105,7 @@
         </div>
         <script>
             let w = window.innerWidth, h = window.innerHeight;
-            let ground = 288/448 * window.innerHeight;
+            let ground = 388/448 * window.innerHeight;
             let player;
             let bgImg;
             let bg1, bg2;
@@ -214,28 +214,28 @@
                 }
                 
                 // Player
-                let height = h/6;
-                player = new Player(w/2 - 70/2, ground - height, height, height, frames[0]);
+                let height = h/4;
+                player = new Player(w/2 - 70/2, ground - height - 20, height, height, frames[0]);
                 
                 setTimeout(() => {
                     setInterval(pushEnemy, 10000);pushEnemy();
                     makeToast('Enemies are coming! Be ready to kill!', 500);
-                }, 18000);
+                }, 1000);
                 
                 setTimeout(() => {
                     setInterval(pushEnemy1, 9000);
                     pushEnemy1();
-                }, 20000);
+                }, 3000);
                 
                 
                 function pushEnemy(){
-                    let height = h/6;
+                    let height = h/4;
                     let enemy = new Enemy(-70, ground - height, height, height, enemyFrames[0], 0.5);
                     enemies.push(enemy);
                 }
                 
                 function pushEnemy1(){
-                    let height = h/6;
+                    let height = h/4;
                     let e = new Enemy(w, ground - height, height, height, enemyFrames[2], 0.3);
                     enemies1.push(e);
                 }
@@ -665,7 +665,7 @@
                 
                 
                 setInterval(() => {
-                    makeToast('Kill the blue enemies to get more health!', 0);
+                    makeToast('Kill the enemies to the right to get more health!', 0);
                 }, toastdelay + 25000);
                 
             }
